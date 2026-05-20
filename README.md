@@ -245,7 +245,7 @@
             products.forEach(p => {
                 const agotado = p.stock <= 0;
                 const div = document.createElement("div");
-                div.className = `bg-gray-800 p-4 rounded-xl border border-black-700 shadow flex flex-col justify-between h-36 transition-all ${agotado ? 'border-red-900/40 bg-red-850/60' : ''}`;
+                div.className = `bg-gray-800 p-4 rounded-xl border border-gray-700 shadow flex flex-col justify-between h-36 transition-all ${agotado ? 'border-red-900/40 bg-gray-850/60' : ''}`;
                 
                 div.innerHTML = `
                     <div>
@@ -255,10 +255,10 @@
                         <h4 class="text-sm font-bold text-white line-clamp-2">${p.nombre}</h4>
                     </div>
                     
-                    <div class="flex justify-between items-center pt-2 border-t border-purple-750">
-                        <span class="text-xs text-purple-200">Disponibles: <strong class="${agotado ? 'text-red-400 font-extrabold' : 'text-black font-extrabold'}">${p.stock} pzas</strong></span>
+                    <div class="flex justify-between items-center pt-2 border-t border-gray-750">
+                        <span class="text-xs text-gray-200">Disponibles: <strong class="${agotado ? 'text-red-400 font-extrabold' : 'text-white font-extrabold'}">${p.stock} pzas</strong></span>
                         <button onclick="addToCart('${p.id}')" ${agotado ? 'disabled' : ''} 
-                                class="px-4 py-2 rounded text-xs font-bold transition-all ${agotado ? 'bg-red-950/40 text-red-400 border border-red-900/60 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-500 text-black shadow'}">
+                                class="px-4 py-2 rounded text-xs font-bold transition-all ${agotado ? 'bg-red-950/40 text-red-400 border border-red-900/60 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow'}">
                             ${agotado ? '🚨 AGOTADO EN ALMACÉN' : '🛒 Añadir a Lista'}
                         </button>
                     </div>
@@ -279,7 +279,7 @@
 
             cart.forEach(c => {
                 const div = document.createElement("div");
-                div.className = "p-3 bg-gray-750 rounded-lg border border-purple-700 text-xs flex justify-between items-center";
+                div.className = "p-3 bg-gray-750 rounded-lg border border-gray-700 text-xs flex justify-between items-center";
                 div.innerHTML = `
                     <span class="font-bold text-white max-w-[75%] truncate">${c.nombre}</span>
                     <span class="bg-amber-500/20 border border-amber-500/40 text-amber-300 px-2 py-0.5 rounded font-black font-mono">${c.qty} pza(s)</span>
